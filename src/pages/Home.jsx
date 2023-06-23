@@ -37,6 +37,17 @@ function Home() {
         <h1>
           <span ref={el}></span>
         </h1>
+        <p className="text-center">
+          <b>
+            ¡Felicidades a la cumpleañera!
+          </b>
+        </p>
+        <p>
+          Creamos esta web sencillita para dedicarte algunas canciones bonitas
+          que nos hacen pensar en ti como regalito por cumplir años el día de hoy.
+          <br />
+          Ojalá te agrade {<LuHeart/>}
+        </p>
         <p>
           Escucha las canciones que recopilamos para ti, las
           elegimos con mucho cariño {<LuHeart/>}

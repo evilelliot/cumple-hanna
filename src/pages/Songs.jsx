@@ -41,7 +41,7 @@ function Songs() {
             <h4 style={{ textAlign: 'center' }} className="music">
                 <LuMusic4 />
             </h4>
-            <h4 className="text-center">Tenemos {songList.length} canciones para ti.</h4>
+            <h4 className="text-center songs-list-title">Tenemos {songList.length} canciones para ti.</h4>
             {songList.length === 0 ? (
                 <p>No hay canciones aún</p>
             ) : (

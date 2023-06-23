@@ -6,11 +6,11 @@ import Song from './pages/Song';
 import Panel from './pages/Panel';
 import Songs from './pages/Songs';
 import Register from './pages/Register';
+import Footer from './pages/Footer';
+
 import 'bootstrap/dist/css/bootstrap.css';
 import * as config from './config';
 import './styles/background.css';
-import { IconName } from "react-icons/lu";
-
 function App() {
   window.config = config;
   return (
@@ -22,6 +22,7 @@ function App() {
         <Route path="/songs" element={<Songs />} />
         <Route path="/register" element={<Register />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }
