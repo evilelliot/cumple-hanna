@@ -83,3 +83,8 @@ a:visited {
     color: white;
     font-weight: bolder;
 }
+.title{
+    color: white;
+    text-align: center;
+    font-weight: bolder;
+}

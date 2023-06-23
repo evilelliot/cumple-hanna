@@ -42,13 +42,17 @@ function Songs() {
                 <LuMusic4 />
             </h4>
             <h4 className="text-center songs-list-title">Tenemos {songList.length} canciones para ti.</h4>
+            <p className="title">
+              Cada canción tiene un enlace a unacartita especial, abrela para leerla y escuchar la canción 
+              elegida.
+            </p>
             {songList.length === 0 ? (
                 <p>No hay canciones aún</p>
             ) : (
                 <ul className="song-list">
                 {songList.map((song) => (
                     <li key={song.id}>
-                        <a href={"song/" + song.slug}><b>{<LuPlay />}</b> {song.songName}</a>
+                        <a href={"song/" + song.slug} target="_blank"><b>{<LuPlay />}</b> {song.songName}</a>
                     </li>
                 ))}
                 </ul>
