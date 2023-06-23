@@ -3,20 +3,18 @@ import Typed from "typed.js";
 import { FaPlay } from "react-icons/fa";
 import { LuHeart, LuChefHat } from "react-icons/lu";
 import { useWindowSize } from 'react-use';
-
 import Confetti from 'react-confetti'
 
 function Home() {
-  const { width, height } = useWindowSize()
+  const { width, height } = useWindowSize();
   // Create reference to store the DOM element containing the animation
   const el = React.useRef(null);
 
   React.useEffect(() => {
     const typed = new Typed(el.current, {
       strings: [
-        "Hola Haña ^1000, queremos decirte algunas cosas.",
+        "Hola Haña^500, queremos decirte algunas cosas.",
         "Así que hicimos esto para que las puedas ver.",
-        "< 3",
       ],
       typeSpeed: 50,
       loop: true
@@ -44,7 +42,7 @@ function Home() {
           elegimos con mucho cariño {<LuHeart/>}
         </p>
         <div className="d-grid gap-2">
-          <a href="/songs" className="btn btn-outline-success">
+          <a href="/songs" className="btn btn-pinky">
             <FaPlay />
           </a>
         </div>

@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { getFirestore, collection, getDocs } from "firebase/firestore";
 import { firestore } from "../firebase";
+import { LuMusic4, LuPlay } from 'react-icons/lu';
+import { useWindowSize } from 'react-use';
+import Confetti from 'react-confetti'
 
 function Songs() {
   const [songList, setSongList] = useState([]);
+  const { width, height } = useWindowSize();
 
   useEffect(() => {
     // Obtener la colección de canciones desde Firestore
@@ -18,7 +22,7 @@ function Songs() {
         } else {
           const songs = snapshot.docs.map((doc) => ({
             id: doc.id,
-            ...doc.data()
+            ...doc.data(),
           }));
           setSongList(songs);
         }
@@ -31,18 +35,25 @@ function Songs() {
   }, []);
 
   return (
-    <div>
-      {songList.length === 0 ? (
-        <p>No hay canciones aún</p>
-      ) : (
-        <ul>
-          {songList.map((song) => (
-            <li key={song.id}>
-              <a href={'song/' + song.slug}>{song.songName}</a>
-            </li>
-          ))}
-        </ul>
-      )}
+    <div className="background">
+        <Confetti width={width} height={height} />
+        <div className="list-container">
+            <h4 style={{ textAlign: 'center' }} className="music">
+                <LuMusic4 />
+            </h4>
+            <h4 className="text-center">Tenemos {songList.length} canciones para ti.</h4>
+            {songList.length === 0 ? (
+                <p>No hay canciones aún</p>
+            ) : (
+                <ul className="song-list">
+                {songList.map((song) => (
+                    <li key={song.id}>
+                        <a href={"song/" + song.slug}><b>{<LuPlay />}</b> {song.songName}</a>
+                    </li>
+                ))}
+                </ul>
+            )}
+        </div>
     </div>
   );
 }
