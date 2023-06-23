@@ -2,8 +2,12 @@ import React from "react";
 import Typed from "typed.js";
 import { FaPlay } from "react-icons/fa";
 import { LuHeart, LuChefHat } from "react-icons/lu";
+import { useWindowSize } from 'react-use';
+
+import Confetti from 'react-confetti'
 
 function Home() {
+  const { width, height } = useWindowSize()
   // Create reference to store the DOM element containing the animation
   const el = React.useRef(null);
 
@@ -25,7 +29,9 @@ function Home() {
   }, []);
 
   return (
+
     <div className="background">
+      <Confetti width={width} height={height} />
       <div className="container container-home">
         <p style={{ textAlign: 'center' }} className="chef">
           <LuChefHat />
